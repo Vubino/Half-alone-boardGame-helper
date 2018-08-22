@@ -1,0 +1,14 @@
+{
+  "name": "Half-Alone",
+  "version": "1.0.0",
+  "description": "A game about surviving",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Vubino",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "electron": "^2.0.7"
+  }
+}
