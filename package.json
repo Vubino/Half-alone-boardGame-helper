@@ -2,7 +2,7 @@
   "name": "Half-Alone",
   "version": "1.0.0",
   "description": "A game about surviving",
-  "main": "main.js",
+  "main": "electron.js",
   "scripts": {
     "start": "electron ."
   },
