@@ -8,7 +8,8 @@ function fillFooter(footer) {
             let title = document.createElement("div")
             title.classList.add("footerCategoryTitle")
             title.textContent = type
-            category.appendChild(title
+            category.appendChild(title)
+
             let span = document.createElement("span")
             span.textContent = "ቖ"
             category.appendChild(span)
@@ -42,6 +43,7 @@ customElements.define(
             fillFooter(footer)
             this.shadowRoot.appendChild(footer)
 
+            this.path = window.location.hash.substring(1)
             window.onhashchange = () => {
                 this.path = window.location.hash.substring(1)
             }

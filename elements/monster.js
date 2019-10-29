@@ -33,7 +33,7 @@ customElements.define(
             while (this.capacities.firstElementChild) { this.capacities.firstElementChild.remove() }
             for (let capacity of data.capacities) {
                 let el = document.createElement("li")
-                el.textContent = capacity.name + " : " + capacity.description
+                el.innerHTML = capacity.name + " : " + capacity.description
                 this.capacities.appendChild(el)
             }
 
