@@ -142,7 +142,7 @@ alterne entre la position de chasseur et la position assassin`
         {
             name: "piques",
             description: `
-<p>piques's desc</p>
+<p>Piège le plus basique : des pics sur le sol, on arrive, on marche, ca fait mal au pieds (comme des légos)</p>
 `,
             costs: [
                 {name: "action", quantity: 1},
