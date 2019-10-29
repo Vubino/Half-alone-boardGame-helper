@@ -8,8 +8,7 @@ function fillFooter(footer) {
             let title = document.createElement("div")
             title.classList.add("footerCategoryTitle")
             title.textContent = type
-            category.appendChild(title)
-
+            category.appendChild(title
             let span = document.createElement("span")
             span.textContent = "ቖ"
             category.appendChild(span)
