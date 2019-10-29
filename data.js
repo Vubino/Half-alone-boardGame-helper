@@ -83,15 +83,51 @@ Un matin l'alarme sonne... Vous connaissez cette alarme : ce n'est pas une perte
             name: "lizard",
             img: "path/to/lizard.png",
             description: `
-<p>lizard's desc</p>
+<p>ce lézard n'est pas un simple lézard, c'est un géant agile et rapide pouvant se cacher</p>
 `,
             capacities: [
                 {
-                    name: "walk",
+                    name: "marcher",
+                    description: ``
                 },
                 {
-                    name: "run",
-                    description: `this is faster`
+                    name: "odorat",
+                    description: `
+(nécessite position assassin) désigne 1 case sans portée maximale :
+<ul>
+    <li>les survivants doivent dire s'il sont sur cette case ou une case atteignable en 2 déplacements</li>
+    <li>les survivants sur la case désignée deviennent effrayés pendant 3  tours</li>
+</ul>`
+                },
+                {
+                    name: "courir",
+                    description: `
+(nécessite position chasseur) déplacement de 3 cases au lieu de 2`
+                },
+                {
+                    name: "odorat",
+                    description: `
+(nécessite position chasseur) désigne 1 case sans portée maximale :
+<ul>
+    <li>les survivants doivent dire s'il sont sur cette case</li>
+    <li>les survivants sur la case désignée ou une case atteignable en 2 déplacements deviennent effrayés pendant 3  tours</li>
+</ul>`
+                },
+                {
+                    name: "trainer un corps",
+                    description: `
+(nécessite position chasseur) désigne 1 case sans portée maximale :
+<ul>
+    <li>déplace le monstre ainsi qu'un joueur a terre sur une position adjacente</li>
+    <li>les effet de marcher(du monstre) s'appliquent sur les deux joueurs</li>
+    <li>le joueur a terre laisse une traînée de sang</li>
+    <li>le joueur ne peux pas se deplacer ce tour ci</li>
+</ul>`
+                },
+                {
+                    name: "changer de position",
+                    description: `
+alterne entre la position de chasseur et la position assassin`
                 }
             ],
             talents: [
