@@ -5,19 +5,17 @@ customElements.define(
             super();
             this.attachShadow({mode: 'open'})
 
-            let title = document.createElement("h1")
-            title.id = "title"
-            let body = document.createElement("div")
-            body.id = "body"
+            this.titleEl = document.createElement("h1")
+            this.body = document.createElement("div")
 
-            this.shadowRoot.appendChild(title)
-            this.shadowRoot.appendChild(body)
+            this.shadowRoot.appendChild(this.titleEl)
+            this.shadowRoot.appendChild(this.body)
         }
 
         updateContent() {
             const data = wikiData.mecanic.find(meca => meca.name === this.path)
-            this.shadowRoot.querySelector("#title").textContent = data.name
-            this.shadowRoot.querySelector("#body").innerHTML = data.content
+            this.titleEl.textContent = data.name
+            this.body.innerHTML = data.content
         }
 
         attributeChangedCallback(name, oldValue, newValue) {

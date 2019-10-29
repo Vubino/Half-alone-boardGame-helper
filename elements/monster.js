@@ -4,13 +4,18 @@ customElements.define(
         constructor() {
             super();
             this.attachShadow({mode: 'open'})
+            this.titleEl = document.createElement("h1")
+            this.titleEl.id = "title"
+            this.shadowRoot.appendChild(this.titleEl)
             this.body = document.createElement("div")
             this.body.id = "body"
             this.shadowRoot.appendChild(this.body)
         }
 
         updateContent() {
-            this.body.textContent = this.path
+            const data = wikiData.monster.find(monster => monster.name === this.path)
+            this.titleEl.textContent = data.name
+            this.body.innerHTML = data.description
         }
 
         attributeChangedCallback(name, oldValue, newValue) {
