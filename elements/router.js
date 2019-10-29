@@ -8,14 +8,20 @@ function fillFooter(footer) {
             let title = document.createElement("div")
             title.classList.add("footerCategoryTitle")
             title.textContent = type
-            category.appendChild(title)
-
+            category.appendChild(title
+            let span = document.createElement("span")
+            span.textContent = "ቖ"
+            category.appendChild(span)
             for (let object of wikiData[type]) {
                 let link = document.createElement("a")
                 link.classList.add("footerElement")
                 link.textContent = object.name
                 link.href = `#${type}/${object.name}`
                 category.appendChild(link)
+
+                let span = document.createElement("span")
+                span.textContent = "ቖ"
+                category.appendChild(span)
             }
         }
     }
@@ -71,4 +77,4 @@ customElements.define(
         set path(val) { this.setAttribute("path", val); return this }
         get path() { return this.getAttribute("path") }
     }
-);
+)
