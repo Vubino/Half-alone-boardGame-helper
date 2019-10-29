@@ -136,13 +136,6 @@ alterne entre la position de chasseur et la position assassin`
                     description: "in assassin stance, you have 50% not to be detected by scientist"
                 }
             ]
-        },
-        {
-            name: "slime",
-            img: "path/to/slime.png",
-            description: `
-<p>slime's desc</p>
-`
         }
     ],
     trap: [
