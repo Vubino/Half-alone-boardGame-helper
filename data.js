@@ -53,20 +53,20 @@ const wikiData = {
     trap: [
         {
             name: "piques",
-            cost: [
+            description: `
+<p>piques's desc</p>
+`,
+            costs: [
                 {name: "action", quantity: 1},
                 {name: "metal", quantity: 1}
             ],
-            scrap: [
+            scraps: [
                 {name: "metal", quantity: 1}
             ],
-            effect: {
+            effects: {
                 monster: "lose 1 hp",
-                scientific: "get to the ground, make noise"
-            },
-            description: `
-<p>piques's desc</p>
-`
+                scientist: "get to the ground, make noise"
+            }
         }
     ]
 }
