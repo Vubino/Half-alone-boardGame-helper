@@ -4,18 +4,45 @@ customElements.define(
         constructor() {
             super();
             this.attachShadow({mode: 'open'})
+
             this.titleEl = document.createElement("h1")
-            this.titleEl.id = "title"
             this.shadowRoot.appendChild(this.titleEl)
-            this.body = document.createElement("div")
-            this.body.id = "body"
-            this.shadowRoot.appendChild(this.body)
+
+            this.img = document.createElement("img")
+            this.shadowRoot.appendChild(this.img)
+
+            this.description = document.createElement("div")
+            this.shadowRoot.appendChild(this.description)
+
+            this.shadowRoot.append("Capacities")
+            this.capacities = document.createElement("ul")
+            this.shadowRoot.appendChild(this.capacities)
+
+            this.shadowRoot.append("Talents")
+            this.talents = document.createElement("ul")
+            this.shadowRoot.appendChild(this.talents)
+
         }
 
         updateContent() {
             const data = wikiData.monster.find(monster => monster.name === this.path)
             this.titleEl.textContent = data.name
-            this.body.innerHTML = data.description
+            this.img.src = data.img
+            this.description.innerHTML = data.description
+
+            while (this.capacities.firstElementChild) { this.capacities.firstElementChild.remove() }
+            for (let capacity of data.capacities) {
+                let el = document.createElement("li")
+                el.textContent = capacity.name + " : " + capacity.description
+                this.capacities.appendChild(el)
+            }
+
+            while (this.talents.firstElementChild) { this.talents.firstElementChild.remove() }
+            for (let telent of data.talents) {
+                let el = document.createElement("li")
+                el.textContent = telent.name + " : " + telent.description
+                this.talents.appendChild(el)
+            }
         }
 
         attributeChangedCallback(name, oldValue, newValue) {
