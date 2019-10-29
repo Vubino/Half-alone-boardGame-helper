@@ -1,16 +1,23 @@
 customElements.define(
-    "hb-wiki-monster",
+    "hb-wiki-mecanic",
     class extends HTMLElement {
         constructor() {
             super();
             this.attachShadow({mode: 'open'})
-            this.body = document.createElement("div")
-            this.body.id = "body"
-            this.shadowRoot.appendChild(this.body)
+
+            let title = document.createElement("h1")
+            title.id = "title"
+            let body = document.createElement("div")
+            body.id = "body"
+
+            this.shadowRoot.appendChild(title)
+            this.shadowRoot.appendChild(body)
         }
 
         updateContent() {
-            this.body.textContent = this.path
+            const data = wikiData.mecanic.find(meca => meca.name === this.path)
+            this.shadowRoot.querySelector("#title").textContent = data.name
+            this.shadowRoot.querySelector("#body").innerHTML = data.content
         }
 
         attributeChangedCallback(name, oldValue, newValue) {

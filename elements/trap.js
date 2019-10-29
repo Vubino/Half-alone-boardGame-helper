@@ -1,5 +1,5 @@
 customElements.define(
-    "hb-wiki-monster",
+    "hb-wiki-trap",
     class extends HTMLElement {
         constructor() {
             super();
